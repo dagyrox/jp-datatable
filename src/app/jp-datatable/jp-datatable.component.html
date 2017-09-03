@@ -1,0 +1,12 @@
+<div class="jp-datatable-container mat-elevation-z8">
+  <cdk-table [dataSource]="dataSource" class="jp-datatable-table">
+    <!-- Column Definitions -->
+    <ng-container *ngFor="let key of displayedColumns.dataKeys; let i = index" cdkColumnDef="{{key}}">
+      <cdk-header-cell *cdkHeaderCellDef class="jp-datatable-header-cell"> {{displayedColumns.columnLabels[i]}} </cdk-header-cell>
+      <cdk-cell *cdkCellDef="let row" class="jp-datatable-cell"> {{row[key]}} </cdk-cell>
+    </ng-container>
+    <!-- Header and Row Declarations -->
+    <cdk-header-row *cdkHeaderRowDef="displayedColumns.dataKeys" class="jp-datatable-header-row"></cdk-header-row>
+    <cdk-row *cdkRowDef="let row; columns: displayedColumns.dataKeys" class="jp-datatable-row"></cdk-row>
+  </cdk-table>
+</div>

@@ -1,0 +1,43 @@
+/* Structure */
+.jp-datatable-container {
+    display: flex;
+    flex-direction: column;
+    min-width: 300px;
+  }
+  
+  /*
+   * Styles to make the demo's cdk-table match the material design spec
+   * https://material.io/guidelines/components/data-tables.html
+   */
+  .jp-datatable-table {
+    flex: 1 1 auto;
+    overflow: auto;
+    max-height: 500px;
+  }
+  
+  .jp-datatable-header-row, .jp-datatable-row {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    min-height: 32px;
+    max-height: 32px;
+    padding: 0 8px;
+    overflow-y: hidden;
+  }
+  
+  .jp-datatable-cell, .jp-datatable-header-cell {
+    flex: 1;
+  }
+  
+  .jp-datatable-header-cell {
+    font-size: 12px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.54);
+  }
+  
+  .jp-datatable-cell {
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.87);
+    max-height: 32px;
+    overflow-y: auto;
+  }
