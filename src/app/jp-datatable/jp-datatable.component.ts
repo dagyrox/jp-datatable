@@ -5,18 +5,20 @@ import 'rxjs/add/operator/startWith';
 import 'rxjs/add/observable/merge';
 import 'rxjs/add/operator/map';
 
+import { JpDatatable } from './jp-datatable.definitions';
+
 @Component({
   selector: 'jp-datatable',
   templateUrl: './jp-datatable.component.html',
   styleUrls: ['./jp-datatable.component.css']
 })
 export class JpDatatableComponent implements OnInit {
-  @Input() dataObservable: any;
-  @Input() displayedColumns: any[];
+  //@Input() dataObservable: any;
+  @Input() datatableDefinition: JpDatatable;
   dataSource: JpDataSource | null;
 
   ngOnInit() {
-    this.dataSource = new JpDataSource(this.dataObservable);
+    this.dataSource = new JpDataSource(this.datatableDefinition.dataSource);
   }
 
 }

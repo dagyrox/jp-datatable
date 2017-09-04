@@ -1,10 +1,4 @@
-/* Structure */
-.jp-datatable-container {
-    display: flex;
-    flex-direction: column;
-    min-width: 300px;
-  }
-  
+
   /*
    * Styles to make the demo's cdk-table match the material design spec
    * https://material.io/guidelines/components/data-tables.html

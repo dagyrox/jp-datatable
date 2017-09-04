@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { JpDatatable, JpDatatableColumn } from './jp-datatable/jp-datatable.definitions';
 
 @Component({
   selector: 'app-root',
@@ -9,10 +10,27 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 export class AppComponent {
   title = 'app';
   exampleDatabase = new ExampleDatabase();
-  displayedColumns = {
-    dataKeys: ['id', 'letter', 'thing'],
-    columnLabels: ['ID', 'Letter', 'Thing']};
-  }
+  dataDefinition: JpDatatable = {
+    dataColumns: [
+      {
+        key: 'id',
+        label: 'ID',
+        width: '50px'
+      },
+      {
+        key: 'letter',
+        label: 'Letter',
+        width: '25%'
+      },
+      {
+        key: 'thing',
+        label: 'Thing'
+      }
+    ],
+    dataSource: this.exampleDatabase.dataChange,
+    headerColumns: ['id', 'letter', 'thing']
+  };
+}
 
 // lets pretend we go out and get data.  we'll just pass he observable to the datatable
 export class ExampleDatabase {
